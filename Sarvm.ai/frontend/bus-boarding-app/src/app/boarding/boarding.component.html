@@ -1,0 +1,61 @@
+<div class="boarding-container">
+  <div class="card">
+    <h2>Bus Boarding Sequence Generator</h2>
+
+    <p class="instructions">Upload a booking data file (.csv or .txt) in this format:</p>
+    <pre class="example">
+Booking_ID,Seats
+101,A1,B1
+120,A20,C2
+115,B5
+    </pre>
+
+    <!-- File upload section -->
+    <div class="file-upload">
+      <label for="fileInput" class="file-label"><strong>📂 Choose File:</strong></label>
+      <input
+        type="file"
+        id="fileInput"
+        accept=".csv,.txt"
+        (change)="onFileSelected($event)"
+      />
+    </div>
+
+    <!-- Show uploaded file name -->
+    <p *ngIf="fileName" class="file-name">✅ File <strong>{{ fileName }}</strong> uploaded successfully.</p>
+
+    <!-- Generate button -->
+    <button class="generate-btn" (click)="generateSequence()" [disabled]="!fileContent">
+      Generate Boarding Sequence
+    </button>
+
+    <!-- Display valid results -->
+    <div *ngIf="validBookings.length > 0" class="result fade-in">
+      <h3>🧾 Boarding Order</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Seq</th>
+            <th>Booking ID</th>
+            <th>Seats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of validBookings">
+            <td>{{ s.seq }}</td>
+            <td>{{ s.id }}</td>
+            <td>{{ s.seats.join(', ') }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Display errors -->
+    <div *ngIf="errors.length > 0" class="error fade-in">
+      <h3>⚠️ Validation Errors</h3>
+      <ul>
+        <li *ngFor="let e of errors">{{ e }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

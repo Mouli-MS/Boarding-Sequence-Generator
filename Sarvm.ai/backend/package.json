@@ -1,0 +1,22 @@
+{
+  "name": "bus-boarding-backend",
+  "version": "1.0.0",
+  "description": "Backend for Bus Boarding Sequence Generator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "papaparse": "^5.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

@@ -1,0 +1,4 @@
+Booking_ID,Seats
+100,A10,B1
+115,B5
+
