@@ -2,7 +2,7 @@
 An interactive Angular web application that determines the optimal boarding sequence for bus passengers based on their seat positions.
 It ensures that passengers with seats farther from the entry board first, reducing overall boarding time.
 
-# 🚀 Features
+# 🚀 Features 
 
 Upload booking data directly via CSV/text file
 
